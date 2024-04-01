@@ -1,4 +1,5 @@
-# [Your Business Name] Website
+remote_theme: beautiful-jekyll
+# Summer Arts and Crafts Classes
 
 ## Overview
 
