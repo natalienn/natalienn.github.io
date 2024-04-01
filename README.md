@@ -4,6 +4,35 @@
 
 Brief introduction to your business and the purpose of the website.
 
+
+## Signup Form
+
+To sign up for a class, please fill out the form below:
+
+<form id="signupForm">
+  <label for="fullName">Full Name:</label>
+  <input type="text" id="fullName" name="fullName" required><br><br>
+  
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required><br><br>
+  
+  <label for="classDate">Class Date:</label>
+  <input type="date" id="classDate" name="classDate" required><br><br>
+  
+  <input type="submit" value="Sign Up">
+</form>
+
+<script>
+document.getElementById("signupForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent the form from submitting
+  
+  // You can add your JavaScript code here to handle form submission, such as sending data to a server or displaying a confirmation message
+  
+  // For demonstration purposes, let's just display an alert message
+  alert("Thank you for signing up!");
+});
+</script>
+
 ## Features
 
 - List of key features offered by the website.
