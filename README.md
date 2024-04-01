@@ -56,17 +56,6 @@ To sign up for Class 3, please fill out the form below:
 </form>
 
 <script>
-document.querySelectorAll(".classSignupForm").forEach(function(form) {
-  form.addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent the form from submitting
-    
-    // You can add your JavaScript code here to handle form submission, such as sending data to a server or displaying a confirmation message
-    
-    // For demonstration purposes, let's just display an alert message
-    alert("Thank you for signing up!");
-  });
-});
-
 document.querySelectorAll("a[href^='#']").forEach(function(anchor) {
   anchor.addEventListener("click", function(event) {
     event.preventDefault(); // Prevent the default anchor behavior
@@ -82,6 +71,26 @@ document.querySelectorAll("a[href^='#']").forEach(function(anchor) {
     if (signupForm) {
       signupForm.style.display = "block";
     }
+  });
+});
+
+document.querySelectorAll(".classSignupForm").forEach(function(form) {
+  form.addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the form from submitting
+    
+    // Get form data
+    var formData = new FormData(form);
+    var fullName = formData.get("fullName");
+    var email = formData.get("email");
+    var className = form.id.replace("SignupForm", ""); // Get class name from form ID
+    
+    // You can now do something with the form data, such as sending it to a server
+    console.log("Class:", className);
+    console.log("Full Name:", fullName);
+    console.log("Email:", email);
+    
+    // For demonstration purposes, let's just display an alert message
+    alert("Thank you for signing up for " + className + "!");
   });
 });
 </script>
